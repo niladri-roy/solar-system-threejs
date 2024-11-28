@@ -13,9 +13,9 @@ const Sun = () => {
 
   return (
     <mesh>
-      <sphereGeometry args={[2, 32, 32]} />
+      <sphereGeometry args={[10, 32, 32]} />
       <meshBasicMaterial map={sunTexture} />
-      <pointLight intensity={2} />
+      <pointLight intensity={200} />
     </mesh>
   );
 };
@@ -46,14 +46,14 @@ const App = () => {
   return (
     <Canvas
       style={{ height: "100vh", width: "100vw" }}
-      camera={{ position: [0, 0, 400], fov: 75, near: 0.1, far: 2000 }}
+      camera={{ position: [0, 0, 30], fov: 75, near: 0.1, far: 2000 }}
     >
       {/* Sun */}
       <Sun />
       {/* Planets */}
-      <Planet size={0.5} color="blue" distance={5.79} speed={0.1} />{" "}
+      <Planet size={0.5} color="blue" distance={15.79} speed={0.01} />{" "}
       {/* Earth */}
-      <Planet size={0.87} color="red" distance={45} speed={0.008} />{" "}
+      <Planet size={0.87} color="red" distance={55} speed={0.008} />{" "}
       {/* Mars */}
       {/* Lights */}
       <ambientLight intensity={0.5} />
