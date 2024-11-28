@@ -11,8 +11,14 @@ const Sun = () => {
 
   const sunTexture = useLoader(TextureLoader, sun_texture); // Load sun texture
 
+  const sunRef = useRef();
+
+  useFrame(() => {
+    if (sunRef.current) sunRef.current.rotation.y += 0.0009; // Rotation
+  })
+
   return (
-    <mesh>
+    <mesh ref={sunRef}>
       <sphereGeometry args={[10, 32, 32]} />
       <meshBasicMaterial map={sunTexture} />
       <pointLight intensity={200} />
